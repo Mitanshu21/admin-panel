@@ -11,11 +11,15 @@ function InputField({
   min,
   max,
   error,
+  isoptional,
 }) {
   return (
     <>
       <div className={parentclassname}>
-        <label className="block text-sm">{label}</label>
+        <label className="block text-sm">
+          {label}
+          {!isoptional && "*"}
+        </label>
 
         <input
           type={type}
@@ -40,6 +44,7 @@ function InputField({
 
 InputField.defaultProps = {
   className: "",
+  isoptional: false,
 };
 
 export default InputField;

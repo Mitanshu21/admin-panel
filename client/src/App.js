@@ -4,6 +4,7 @@ import Home from "./components/pages/Home";
 import Register from "./components/pages/Register/Register";
 import Login from "./components/pages/Login/Login";
 import ProtectedRoute from "./components/validator/ProtectedRoute";
+import PublicRoute from "./components/validator/PublicRoute";
 import UserDetails from "./components/pages/UserDetails";
 import UserEducation from "./components/pages/UserEducation/UserEducation";
 import Navbar from "./components/layout/Navbar";
@@ -31,11 +32,13 @@ function App() {
             }
           >
             <Route path="/" element={<Home loggedUser={loggedUser} />} />
-            <Route path="register" element={<Register />} />
-            <Route
-              path="login"
-              element={<Login setLoggedUser={setLoggedUser} />}
-            />
+            <Route element={<PublicRoute loggedUser={loggedUser} />}>
+              <Route path="register" element={<Register />} />
+              <Route
+                path="login"
+                element={<Login setLoggedUser={setLoggedUser} />}
+              />
+            </Route>
             <Route element={<ProtectedRoute loggedUser={loggedUser} />}>
               <Route path="userdetails" element={<UserDetails />} />
               <Route path="usereducation" element={<UserEducation />} />

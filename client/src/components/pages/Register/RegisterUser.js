@@ -75,7 +75,7 @@ function RegisterUser({ formValue, handlechange, error }) {
       />
 
       <div className="mb-4">
-        <label className="block text-sm">Gender</label>
+        <label className="block text-sm">Gender*</label>
         <select
           className="appearance-none border bg-white rounded w-full py-2 px-3 text-grey-darker"
           name="gender"
