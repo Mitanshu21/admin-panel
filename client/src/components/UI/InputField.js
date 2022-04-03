@@ -45,6 +45,7 @@ function InputField({
 InputField.defaultProps = {
   className: "",
   isoptional: false,
+  type: "text"
 };
 
 export default InputField;

@@ -26,7 +26,6 @@ function RegisterEducation({
       <InputField
         parentclassname={"mb-4"}
         label={"Institute/School"}
-        type={"text"}
         name={"institute"}
         placeholder={"enter your institute"}
         value={element.institute}
@@ -51,7 +50,6 @@ function RegisterEducation({
         <InputField
           parentclassname={"w-1/2 ml-2"}
           label={"Stream"}
-          type={"text"}
           name={"course"}
           placeholder={"enter your course/stream"}
           value={element.course}

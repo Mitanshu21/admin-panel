@@ -8,7 +8,6 @@ function RegisterUser({ formValue, handlechange, error }) {
         <InputField
           parentclassname={"w-1/2 mr-2"}
           label={"First Name"}
-          type={"text"}
           name={"firstname"}
           placeholder={"enter your First Name"}
           value={formValue.firstname}
@@ -19,7 +18,6 @@ function RegisterUser({ formValue, handlechange, error }) {
         <InputField
           parentclassname={"w-1/2 ml-2"}
           label={"Last Name"}
-          type={"text"}
           name={"lastname"}
           placeholder={"enter your Last Name"}
           value={formValue.lastname}

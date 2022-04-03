@@ -16,8 +16,10 @@ function Login({ setLoggedUser }) {
       ...formInput,
       [e.target.name]: e.target.value,
     });
-    const err = checkError(e.target.name, e.target.value, error);
-    setError({ ...err });
+    setTimeout(() => {
+      const err = checkError(e.target.name, e.target.value, error);
+      setError({ ...err });
+    }, 1500);
   };
   console.log(formInput);
 

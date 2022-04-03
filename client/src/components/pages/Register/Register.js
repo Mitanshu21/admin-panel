@@ -204,7 +204,6 @@ function Register() {
                   ) : (
                     <div className="flex mb-4 justify-center">
                       <ButtonT
-                        type={"button"}
                         onclick={() => addFormFields()}
                         color="bg-sky-500"
                         hovercolor="hover:bg-sky-700"
@@ -233,7 +232,6 @@ function Register() {
                 >
                   {step === 2 && (
                     <ButtonT
-                      type="button"
                       onclick={() => setStep(1)}
                       color="bg-teal-500"
                       hovercolor="hover:bg-teal-700"
@@ -243,7 +241,6 @@ function Register() {
                   )}
                   {step === 1 && (
                     <ButtonT
-                      type="button"
                       onclick={() => setStep(2)}
                       color="bg-teal-500"
                       hovercolor="hover:bg-teal-700"

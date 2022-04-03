@@ -22,4 +22,9 @@ function ButtonT({
   );
 }
 
+ButtonT.defaultProps = {
+  className: "",
+  type: "button",
+};
+
 export default ButtonT;
