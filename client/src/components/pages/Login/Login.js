@@ -97,7 +97,6 @@ function Login({ setLoggedUser }) {
           <div className="text-center">
             <ButtonT
               type={"submit"}
-              // color={Object.keys(error).length === 0 ? "green" : "slate"}
               color="bg-green-500"
               hovercolor="hover:bg-green-700"
             >

@@ -14,7 +14,7 @@ function ButtonT({
       type={type}
       onClick={onclick}
       className={`${color} ${hovercolor} text-white uppercase text-sm font-semibold px-4 py-2 rounded ${classname}`}
-      style={{ backgroundColor: color }}
+      // style={{ backgroundColor: color }}
       disabled={disabled}
     >
       {rest.children}
