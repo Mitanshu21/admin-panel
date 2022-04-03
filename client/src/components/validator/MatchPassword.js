@@ -27,6 +27,6 @@ export const MatchPassword = (
     }
   }
 
-  console.log("last", err);
+  // console.log("last", err);
   return err;
 };

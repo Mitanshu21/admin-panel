@@ -18,6 +18,7 @@ function RegisterEducation({
           <MdDeleteOutline
             color="red"
             size={22}
+            className="cursor-pointer"
             onClick={() => removeEducation(formNumber)}
           />
         </div>

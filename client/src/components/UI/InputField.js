@@ -10,6 +10,7 @@ function InputField({
   onchange,
   min,
   max,
+  step,
   error,
   isoptional,
 }) {
@@ -33,6 +34,7 @@ function InputField({
           } rounded p-2 outline-none focus:shadow-outline`}
           min={min}
           max={max}
+          step={step}
           // autoComplete="off"
           required
         />
@@ -45,7 +47,8 @@ function InputField({
 InputField.defaultProps = {
   className: "",
   isoptional: false,
-  type: "text"
+  type: "text",
+  step: "0.01",
 };
 
 export default InputField;

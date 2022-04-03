@@ -4,6 +4,7 @@ import RegisterEducation from "./RegisterEducation";
 import RegisterUser from "./RegisterUser";
 import { checkError } from "../../validator/InputValidators";
 import { MatchPassword } from "../../validator/MatchPassword";
+import { checkDate } from "../../validator/CheckDate";
 import ProgressBar from "./ProgressBar";
 import ButtonT from "../../UI/ButtonT";
 
@@ -50,12 +51,11 @@ function Register() {
   // console.log(formValues);
 
   const handleChangeUser = (e) => {
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
     if (e.target.name === "confirmPassword" || e.target.name === "password") {
-      setFormValues({
-        ...formValues,
-        [e.target.name]: e.target.value,
-      });
-
       const err = MatchPassword(
         e.target.name,
         e.target.value,
@@ -66,16 +66,12 @@ function Register() {
 
       setUserError({ ...err });
     } else {
-      setFormValues({
-        ...formValues,
-        [e.target.name]: e.target.value,
-      });
       const err = checkError(e.target.name, e.target.value, userError);
       setUserError({ ...err });
     }
   };
 
-  // ! need to change
+  // * education input data changes
   const handleChangeEducation = (i, e) => {
     let newFormValues = [...formValues.education];
     newFormValues[i][e.target.name] = e.target.value;
@@ -83,18 +79,32 @@ function Register() {
       ...formValues,
       education: newFormValues,
     });
-    // console.log("eduerr", eduError.education[i]);
-    const err = checkError(e.target.name, e.target.value, eduError[i]);
 
-    let updatedArr = [...eduError];
-    updatedArr[i] = { ...err };
-    setEduError([...updatedArr]);
+    if (e.target.name === "endDate" || e.target.name === "startDate") {
+      const err = checkDate(
+        e.target.name,
+        e.target.value,
+        formValues.education[i].startDate,
+        formValues.education[i].endDate,
+        eduError[i]
+      );
+      let newEduError = [...eduError];
+      newEduError[i] = { ...err };
+      setEduError([...newEduError]);
+    } else {
+      const err = checkError(e.target.name, e.target.value, eduError[i]);
+
+      let updatedArr = [...eduError];
+      updatedArr[i] = { ...err };
+      setEduError([...updatedArr]);
+    }
+
     // console.log(err);
   };
 
-  console.log("formvalues", formValues);
-  console.log("userError", userError);
-  console.log("eduError", eduError);
+  // console.log("formvalues", formValues);
+  // console.log("userError", userError);
+  // console.log("eduError", eduError);
   // add new education in error also
 
   const addFormFields = () => {

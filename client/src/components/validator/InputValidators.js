@@ -65,6 +65,6 @@ export const checkError = (name, value, error) => {
     if (value.length === 0) err.endDate = "please enter end date";
     else delete err.endDate;
 
-  console.log("last", err);
+  // console.log("last", err);
   return err;
 };
